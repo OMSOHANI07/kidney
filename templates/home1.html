@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>CKD Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+      <input type="text" name="age" placeholder="age" required="required" /><br>
+    	<input type="text" name="bp" placeholder="bp" required="required" /><br>
+        <input type="text" name="sg" placeholder="sg" required="required" /><br>
+        <input type="text" name="al" placeholder="al" required="required" /><br>
+        <input type="text" name="su" placeholder="su" required="required" /><br>
+        <input type="text" name="bgr" placeholder="bgr" required="required" /><br>
+        <input type="text" name="bu" placeholder="bu" required="required" /><br>
+        <input type="text" name="sc" placeholder="sc" required="required" /><br>
+        <input type="text" name="sod" placeholder="sod" required="required" /><br>
+        <input type="text" name="pot" placeholder="pot" required="required" /><br>
+        <input type="text" name="hemo" placeholder="hemo" required="required" /><br>
+        <input type="text" name="pcv" placeholder="pcv" required="required" /><br>
+        <input type="text" name="wc" placeholder="wc" required="required" /><br>
+        <input type="text" name="rc" placeholder="rc" required="required" /><br>
+        <input type="text" name="htn" placeholder="htn" required="required" /><br>
+        <input type="text" name="dm" placeholder="dm" required="required" /><br>
+        <input type="text" name="gender" placeholder="gender" required="required" /><br>
+        <input type="text" name="eGFR" placeholder="eGFR" required="required" /><br>
+
+       
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+  
+   
+ </div>
+ {{prediction_text}}
+
+</body>
+</html>

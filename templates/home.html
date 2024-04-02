@@ -1,12 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Form</title>
+  <link rel="stylesheet" href="kidney.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
 </head>
 <body>
-    <h1>Welcome to the Home Page</h1>
-    <p>This is your Flask web application.</p>
+<header class="header">
+<div class="user">
+  <img src="images/user.png" alt="">
+  <h3 class="name"> Username</h3>
+  <div class="id"> Patient Id </div>
+  <div class="email"> <i class="fa fa-envelope"></i> abc@gmail.com</div>
+  <div class="phone"> <i class="fa fa-phone"></i> &nbsp;0123456789</div>
+</div>
+
+<nav class="navbar">
+  <a href="#">Form</a>
+  <a href="#">Checkup History</a>
+  <a href="#">Doctor's Review</a>
+</nav>
+</header>
+
+<div id="menu-btn" class="fas fa-bars"></div>
+
+<section class="contact" id="contact">
+    <h1 class="heading"><span>Kidney Disease Prediction</span></h1>
+    <form action="{{ url_for('predict')}}" method="post">
+      <div class="columns-container">
+        <div class="column">
+            <div class="field">
+                <label for="age">Enter Age</label>
+                <input type="text" name="age" id="age" placeholder="Age" required>
+              </div>
+              <div class="field">
+                <label for="gender">Enter Gender</label>
+                <input type="text" name="gender" id="gender" placeholder="Enter 1 for male & 0 for female" required>
+              </div>
+              <div class="field">
+                <label for="bp">Enter Blood Pressure</label>
+                <input type="text" name="bp" id="bp" placeholder="Blood Pressure " required>
+              </div>
+              <div class="field">
+                <label for="sg">Enter Specific Gravity</label>
+                <input type="text" name="sg" id="sg" placeholder="Specific Gravity" required>
+              </div>
+              <div class="field">
+                <label for="al">Enter Albumin</label>
+                <input type="text" name="al" id="al" placeholder="Albumin" required>
+              </div>
+              <div class="field">
+                <label for="su">Enter Sugar level</label>
+                <input type="text" name="su" id="su" placeholder="Sugar level" required>
+              </div>
+        </div>
+        <div class="column">
+            <div class="field">
+                <label for="bgr">Enter Blood Glucose</label>
+                <input type="text" name="bgr" id="bgr" placeholder="Blood glucose Random" required>
+              </div>
+              <div class="field">
+                <label for="bu">Enter Blood urea</label>
+                <input type="text" name="bu" id="bu" placeholder="Blood Urea" required>
+              </div>
+              <div class="field">
+                <label for="sc">Enter Serum Creatine</label>
+                <input type="text" name="sc" id="sc" placeholder="Serum Creatine" required>
+              </div>
+              <div class="field">
+                <label for="sod">Enter Serum Sodium</label>
+                <input type="text" name="sod" id="sod" placeholder="Serum Sodium" required>
+              </div>
+              <div class="field">
+                <label for="pot">Enter Serum Potassium</label>
+                <input type="text" name="pot" id="pot" placeholder="Serum Potassium" required>
+              </div>
+              <div class="field">
+                <label for="hemo">Enter Hemoglobin</label>
+                <input type="text" name="hemo" id="hemo" placeholder="Hemoglobin" required>
+              </div>
+        </div>
+        <div class="column">
+            <div class="field">
+                <label for="pcv">Enter Packed Cell Volume</label>
+                <input type="text" name="pcv" id="pcv" placeholder="Packed Cell Volume" required>
+              </div>
+              <div class="field">
+                <label for="wc">Enter White Blood Cell Count</label>
+                <input type="text" name="wc" id="wc" placeholder="White Blood Cell Count" required>
+              </div>
+              <div class="field">
+                <label for="rc">Enter Red Blood Cell Count</label>
+                <input type="text" name="rc" id="rc" placeholder="Red Blood Cell Count" required>
+              </div>
+              <div class="field">
+                <label for="htn">Enter Hypertension</label>
+                <input type="text" name="htn" id="htn" placeholder="Hypertension" required>
+              </div>
+              <div class="field">
+                <label for="dm">Enter Diabetes Mellitus</label>
+                <input type="text" name="dm" id="dm" placeholder="Diabetes Mellitus" required>
+              </div>
+              <div class="field">
+                <label for="eGFR">Enter eGFR</label>
+                <input type="text" name="eGFR" id="eGFR" placeholder="eGFR" required>
+              </div>
+        </div>
+      </div>
+      <input type="submit" value="Analyze" class="register">
+    </form>
+  
+  </section>
+  
+<script src="kidney.js"></script>
+{{prediction_text}}
 </body>
 </html>

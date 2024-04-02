@@ -28,5 +28,13 @@ def predict_api():
     output = {'prediction': prediction.tolist()}  # Convert to list for JSON serialization
     return jsonify(output)
 
+@app.route('/predict',methods=['POST'])
+def predict():
+    data=[float(x) for x in request.form.values()]
+    final_input=scalar.transform(np.array(data).reshape(1,-1))
+    print(final_input)
+    output=kidney_model.predict(final_input)[0]
+    return render_template("home.html","kidney.css",prediction_text="The CKD prediction is {}".format(output))
+
 if __name__ == "__main__":
     app.run(debug=True)

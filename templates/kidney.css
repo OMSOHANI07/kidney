@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600&display=swap");
+
+:root{
+  --blue: #0c87ad;
+  --black: #444;
+  --light-color: #8bdbf3;
+  --bg-color: #a0e0f3;
+  --border: .1rem solid rgba(0,0,0,.2);
+  --box-shadow: .4rem .4rem .1rem #067391,
+                -.4rem -.4rem .1rem #fff;            
+  --box-shadow-inset: .4rem .4rem .1rem #067391 inset,
+                -.4rem -.4rem .1rem #fff inset;            
+      
+}
+
+* {
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  transition: 0.2s linear;
+}
+
+html{
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body{
+  background: var(--bg-color);
+  padding-left: 30rem;
+}
+
+.header{
+  position: fixed;
+  top:0; left: 0;
+  z-index: 999;
+  background: #73d3f1;
+  width: 30rem;
+  border-right: var(--border);
+  height: 100%;
+  padding: 2rem;
+  text-align: center;
+}
+
+.header .user img{
+margin: 1rem 0;
+border: 1rem solid transparent;
+border-radius: 50%;
+height: 20rem;
+width: 20rem;
+box-shadow: var(--box-shadow);
+}
+
+.header .user .name {
+  color: var(--blue);
+  font-size: 3rem;
+}
+
+.header .user .id {
+  color: #0d6b88;
+  font-size: 2rem;
+}
+.header .user .email{
+  color:#09576e;
+  font-size: 1.8rem;
+}
+.header .user .phone{
+  color: #09576e;
+  font-size: 1.8rem;
+}
+
+.header .navbar a{
+  display: block;
+  margin: 0.5rem;
+  margin-top: 3rem;
+  padding: 1.8rem 1.8rem;
+  border-radius: 5rem;
+  font-size: 2rem;
+  box-shadow: var(--box-shadow);
+  color: var(--black);
+  font-weight: bolder;
+}
+
+.header .navbar a:hover{
+  box-shadow: var(--box-shadow-inset);
+}
+
+#menu-btn{
+  position: fixed;
+  top:1.5rem; left: 2rem;
+  z-index: 1000;
+  height: 5rem;
+  width: 5rem;
+  line-height: 5rem;
+  border-radius: 50%;
+  font-size: 2rem;
+  cursor: pointer;
+  box-shadow: var(--box-shadow);
+  text-align: center;
+  color: var(--black);
+  display: none;
+}
+
+#menu-btn:hover{
+  color: var(--blue);
+  box-shadow: var(--box-shadow-inset);
+}
+
+.heading{
+  font-size: 3.5rem;
+  position: relative;
+  top: 4rem;
+  text-align: center;
+  font-weight: bolder;
+  color: #09576e;
+}
+
+.columns-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 8rem;
+  margin-right: 4rem;
+  margin-left: 8rem;
+}
+
+.column {
+  width: 25%; /* Adjust width as needed */
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input[type="submit"] {
+  padding: 16px 63px;
+  background-color: #159bc4;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  right: -53rem;
+  font-weight: bolder;
+  font-size: 1.8rem;
+}
+
+input[type="submit"]:hover {
+  background-color: #0d6b88;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* media queries */
+@media (max-width:991px){
+
+  html{
+    font-size: 55%;
+  }
+
+  body{
+    padding-left: 0;
+  }
+
+  .header{
+    left: -110%;
+  }
+  .header.active{
+    left: 0%;
+    transition: .4s linear;
+  }
+  #menu-btn{
+    display: initial;
+  }
+}
+
+@media (max-width:450px){
+
+  html{
+    font-size: 50%;
+  }
+
+  .header{
+    width: 100%;
+    border-right: 0;
+  }
+}
